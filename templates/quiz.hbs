@@ -1,0 +1,37 @@
+<div class="card p-4">
+  <div class="d-flex justify-content-between mb-2">
+    <span>Question {{index}}</span>
+    <span id="timer">Time: 0s</span>
+  </div>
+  <h4>{{question.text}}</h4>
+
+  {{#if question.options}}
+    <div>
+      {{#each question.options}}
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="answer" value="{{this}}" id="opt{{@index}}">
+          <label class="form-check-label" for="opt{{@index}}">{{this}}</label>
+        </div>
+      {{/each}}
+    </div>
+  {{else if question.imageOptions}}
+    <div class="row">
+      {{#each question.imageOptions}}
+        <div class="col-6 col-md-4 text-center">
+          <label>
+            <input type="radio" name="answer" value="{{this.alt}}" hidden>
+            <img src="{{this.url}}" alt="{{this.alt}}" class="img-thumbnail selectable-img">
+            <p>{{this.alt}}</p>
+          </label>
+        </div>
+      {{/each}}
+    </div>
+  {{else}}
+    <input type="text" id="textAnswer" class="form-control mt-2" placeholder="Type your answer here" />
+  {{/if}}
+
+  <div class="mt-3 d-flex justify-content-between">
+    <div>Score: {{score}}/{{total}}</div>
+    <button id="submitAnswer" class="btn btn-success">Submit</button>
+  </div>
+</div>

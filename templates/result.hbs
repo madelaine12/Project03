@@ -1,0 +1,12 @@
+<div class="card p-4 text-center">
+  {{#if passed}}
+    <h3>Congratulations {{studentName}}! You passed the quiz!</h3>
+  {{else}}
+    <h3>Sorry {{studentName}}, you failed the quiz.</h3>
+  {{/if}}
+  <p>Final Score: {{score}} out of {{total}}</p>
+  <div class="mt-3">
+    <button id="retakeBtn" class="btn btn-primary">Retake Quiz</button>
+    <button id="homeBtn" class="btn btn-secondary">Return Home</button>
+  </div>
+</div>

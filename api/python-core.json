@@ -1,0 +1,46 @@
+[
+    {
+      "id": 0,
+      "text": "Which of the following is used to define a block of code in Python?",
+      "options": ["Curly braces", "Parentheses", "Indentation", "Square brackets"],
+      "correct": "Indentation",
+      "explanation": "Python uses indentation to define blocks, unlike many other languages."
+    },
+    {
+      "id": 1,
+      "text": "What will `print(2 ** 3)` output?",
+      "options": ["6", "8", "9", "5"],
+      "correct": "8",
+      "explanation": "`**` is the exponentiation operator. 2 ** 3 = 8."
+    },
+    {
+      "id": 2,
+      "text": "Which built-in Python function returns the length of a list?",
+      "options": ["count()", "length()", "len()", "size()"],
+      "correct": "len()",
+      "explanation": "len() is the correct function to get the number of items in a list."
+    },
+    {
+      "id": 3,
+      "text": "Type the keyword used to create a function in Python.",
+      "correct": "def",
+      "explanation": "Use 'def' to define a function in Python."
+    },
+    {
+      "id": 4,
+      "text": "Click the image that shows the Python logo.",
+      "imageOptions": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+          "alt": "Python"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+          "alt": "JavaScript"
+        }
+      ],
+      "correct": "Python",
+      "explanation": "The image with two snakes (blue & yellow) is Python's official logo."
+    }
+  ]
+  

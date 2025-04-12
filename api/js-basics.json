@@ -1,0 +1,46 @@
+[
+    {
+      "id": 0,
+      "text": "Which keyword is used to declare a constant variable in JavaScript?",
+      "options": ["var", "let", "const", "define"],
+      "correct": "const",
+      "explanation": "The 'const' keyword declares a block-scoped, read-only constant."
+    },
+    {
+      "id": 1,
+      "text": "What is the output of: `typeof null` in JavaScript?",
+      "options": ["null", "object", "undefined", "number"],
+      "correct": "object",
+      "explanation": "`typeof null` returns 'object' due to a legacy bug in JavaScript."
+    },
+    {
+      "id": 2,
+      "text": "Which method is used to convert a JSON string into a JavaScript object?",
+      "options": ["JSON.parse()", "JSON.stringify()", "toJSON()", "parseJSON()"],
+      "correct": "JSON.parse()",
+      "explanation": "JSON.parse() parses a JSON string and returns the object."
+    },
+    {
+      "id": 3,
+      "text": "Type the keyword that defines a function in JavaScript.",
+      "correct": "function",
+      "explanation": "Use 'function' to declare a traditional JavaScript function."
+    },
+    {
+      "id": 4,
+      "text": "Click the image that represents the official JavaScript logo.",
+      "imageOptions": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+          "alt": "JavaScript"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg",
+          "alt": "C"
+        }
+      ],
+      "correct": "JavaScript",
+      "explanation": "The yellow square with JS is JavaScript's official logo."
+    }
+  ]
+  
