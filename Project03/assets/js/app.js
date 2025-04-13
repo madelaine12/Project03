@@ -89,14 +89,14 @@ function renderQuiz(question) {
     });
 }
 
-
-
 function handleAnswer(answer, question) {
   totalQuestions++;
 
+  const correctAnswers = Array.isArray(question.correct) ? question.correct : [question.correct];  // Handle multiple correct answers
+
   if (
     answer &&
-    answer.trim().toLowerCase() === String(question.correct).trim().toLowerCase()
+    correctAnswers.some(correct => correct.trim().toLowerCase() === answer.trim().toLowerCase())  // Check if answer matches any correct answer
   ) {
     score++;
     showCorrect();
@@ -104,8 +104,6 @@ function handleAnswer(answer, question) {
     showIncorrect(question.explanation);
   }
 }
-
-
 
 
 function showCorrect() {
