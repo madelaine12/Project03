@@ -35,24 +35,40 @@ async function startQuiz() {
 
 
 async function loadNextQuestion() {
+  if (timerInterval) {
+    clearInterval(timerInterval);
+  }
+
   try {
     const question = await fetchQuestion(quizId, currentQuestionIndex);
     renderQuiz(question); 
+    
+    startTime = new Date(); 
+    startTimer(); 
   } catch (err) {
-    clearInterval(timerInterval);
+    clearInterval(timerInterval); 
     showResult();
   }
 }
 
+
 function startTimer() {
   const timerEl = document.getElementById('timer');
-  if (!timerEl) return; 
+  if (!timerEl) return;
+
+  if (timerInterval) {
+    clearInterval(timerInterval);
+  }
+
   timerInterval = setInterval(() => {
     const now = new Date();
-    const elapsed = Math.floor((now - startTime) / 1000);
+    const elapsed = Math.floor((now - startTime) / 1000); 
+    console.log('Elapsed Time:', elapsed); 
+    
     timerEl.textContent = `Time: ${elapsed}s`; 
   }, 1000);
 }
+
 
 function renderQuiz(question) {
   fetch('/templates/quiz.hbs')
