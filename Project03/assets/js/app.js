@@ -5,6 +5,7 @@ let score = 0;
 let totalQuestions = 0;
 let startTime;
 let timerInterval;
+let elapsedSeconds = 0;
 
 const app = document.getElementById('app');
 
@@ -22,20 +23,20 @@ async function fetchQuestion(quizId, index) {
   return await response.json();
 }
 
-async function startQuiz() {
+function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
-  startTime = new Date(); 
-  console.log('Start time:', startTime); 
-  if (!timerInterval) { 
-    startTimer();
-  }
+  totalQuestions = 0;
+  elapsedSeconds = 0;
+  startTime = new Date();
+  startTimer();
   loadNextQuestion();
 }
 
+
 async function loadNextQuestion() {
   if (timerInterval) {
-    clearInterval(timerInterval);
+    clearInterval(timerInterval); 
   }
 
   try {
@@ -44,27 +45,25 @@ async function loadNextQuestion() {
 
     setTimeout(() => {
       startTimer();  
-    }, 300); 
+    }, 100);
   } catch (err) {
-    clearInterval(timerInterval); 
+    clearInterval(timerInterval);
     showResult();
   }
 }
 
 
+
 function startTimer() {
   const timerEl = document.getElementById('timer');
-  if (!timerEl) return;
+  const baseTime = new Date() - elapsedSeconds * 1000;
 
-  if (timerInterval) {
-    clearInterval(timerInterval);
-  }
+  if (timerInterval) clearInterval(timerInterval);
 
   timerInterval = setInterval(() => {
     const now = new Date();
-    const elapsed = Math.floor((now - startTime) / 1000); 
-    console.log('Elapsed Time:', elapsed); 
-    timerEl.textContent = `Time: ${elapsed}s`; 
+    elapsedSeconds = Math.floor((now - baseTime) / 1000);
+    if (timerEl) timerEl.textContent = `Time: ${elapsedSeconds}s`;
   }, 1000);
 }
 
