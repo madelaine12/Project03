@@ -33,8 +33,7 @@ async function startQuiz() {
 async function loadNextQuestion() {
   try {
     const question = await fetchQuestion(quizId, currentQuestionIndex);
-    totalQuestions++;
-    renderQuiz(question);
+    renderQuiz(question); 
   } catch (err) {
     clearInterval(timerInterval);
     showResult();
@@ -70,6 +69,8 @@ function renderQuiz(question) {
 }
 
 function handleAnswer(answer, question) {
+  totalQuestions++; 
+
   if (String(answer).toLowerCase() === String(question.correct).toLowerCase()) {
     score++;
     showCorrect();
@@ -77,6 +78,7 @@ function handleAnswer(answer, question) {
     showIncorrect(question.explanation);
   }
 }
+
 
 function showCorrect() {
   fetch('/templates/correct.hbs')
