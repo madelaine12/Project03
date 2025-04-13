@@ -17,7 +17,7 @@ function render(templateId, context = {}) {
 }
 
 async function fetchQuestion(quizId, index) {
-  const response = await fetch(`https://my-json-server.typicode.com/YOUR_GITHUB_USERNAME/YOUR_REPO/${quizId}/${index}`);
+  const response = await fetch(`https://my-json-server.typicode.com/madelaine12/quiz-app/${quizId}/${index}`);
   if (!response.ok) throw new Error('Question fetch failed');
   return await response.json();
 }
