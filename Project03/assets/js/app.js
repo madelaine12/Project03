@@ -61,12 +61,17 @@ function renderQuiz(question) {
         total: totalQuestions
       });
 
+      setTimeout(() => {
+        if (!timerInterval) startTimer();
+      }, 100); // Ensures DOM is loaded
+
       document.getElementById('submitAnswer').addEventListener('click', () => {
         const answer = document.querySelector('input[name="answer"]:checked')?.value || document.querySelector('#textAnswer')?.value;
         handleAnswer(answer, question);
       });
     });
 }
+
 
 function handleAnswer(answer, question) {
   totalQuestions++; 
