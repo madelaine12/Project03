@@ -42,14 +42,17 @@ async function loadNextQuestion() {
   try {
     const question = await fetchQuestion(quizId, currentQuestionIndex);
     renderQuiz(question); 
-    
-    startTime = new Date(); 
-    startTimer(); 
+
+    setTimeout(() => {
+      startTime = new Date();  
+      startTimer();  
+    }, 500); 
   } catch (err) {
     clearInterval(timerInterval); 
     showResult();
   }
 }
+
 
 
 function startTimer() {
