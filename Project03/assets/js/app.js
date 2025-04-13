@@ -92,14 +92,6 @@ function renderQuiz(question) {
 
 
 function handleAnswer(answer, question) {
-  console.log("🔍 Answer selected:", answer);
-  console.log("✅ Correct answer:", question.correct);
-  console.log(
-    "🧠 Comparison result:",
-    answer?.trim().toLowerCase() === question.correct?.trim().toLowerCase()
-);
-
-  
   totalQuestions++;
 
   if (
@@ -112,6 +104,18 @@ function handleAnswer(answer, question) {
     showIncorrect(question.explanation);
   }
 }
+  
+  totalQuestions++;
+
+  if (
+    answer &&
+    answer.trim().toLowerCase() === String(question.correct).trim().toLowerCase()
+  ) {
+    score++;
+    showCorrect();
+  } else {
+    showIncorrect(question.explanation);
+  }
 
 
 
