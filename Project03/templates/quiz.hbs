@@ -18,13 +18,14 @@
     <div class="row">
       {{#each question.imageOptions}}
         <div class="col-6 col-md-4 text-center">
-          <label>
-            <input type="radio" name="answer" value="{{this.alt}}" hidden>
-            <img src="{{this.url}}" alt="{{this.alt}}" class="img-thumbnail selectable-img">
-            <p>{{this.alt}}</p>
+          <label class="d-block">
+            <input type="radio" name="answer" value="{{this.alt}}" class="form-check-input d-block mx-auto mb-2" />
+            <img src="{{this.url}}" alt="{{this.alt}}" class="img-thumbnail selectable-img" />
+            <p class="mt-2 fw-semibold">{{this.alt}}</p>
           </label>
         </div>
-      {{/each}}
+  {{/each}}
+
     </div>
   {{else}}
     <input type="text" id="textAnswer" class="form-control mt-2" placeholder="Type your answer here" />

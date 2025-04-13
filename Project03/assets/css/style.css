@@ -10,14 +10,14 @@ body {
   max-width: 100%;
   max-height: 150px;
   object-fit: contain;
-  margin: 10px 0;
+  border: 2px solid transparent;
   transition: transform 0.2s ease;
   cursor: pointer;
-  border: 2px solid transparent;
 }
 
-input[type="radio"]:checked + .selectable-img {
+input[type="radio"]:checked + img.selectable-img {
   border-color: #198754;
   transform: scale(1.05);
 }
+
 
