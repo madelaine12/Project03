@@ -25,10 +25,14 @@ async function fetchQuestion(quizId, index) {
 async function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
-  startTime = new Date();
-  startTimer();
+  startTime = new Date(); 
+  console.log('Start time:', startTime); 
+  if (!timerInterval) { 
+    startTimer();
+  }
   loadNextQuestion();
 }
+
 
 async function loadNextQuestion() {
   try {
