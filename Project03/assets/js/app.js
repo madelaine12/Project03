@@ -92,15 +92,19 @@ function renderQuiz(question) {
 
 
 function handleAnswer(answer, question) {
-  totalQuestions++; 
+  totalQuestions++;
 
-  if (String(answer).toLowerCase() === String(question.correct).toLowerCase()) {
+  if (
+    answer &&
+    answer.trim().toLowerCase() === String(question.correct).trim().toLowerCase()
+  ) {
     score++;
     showCorrect();
   } else {
     showIncorrect(question.explanation);
   }
 }
+
 
 
 function showCorrect() {
