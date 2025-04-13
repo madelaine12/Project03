@@ -31,14 +31,16 @@
       "text": "Click the image that shows the Python logo.",
       "imageOptions": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+          "correctValue": "python-logo"
         },
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+          "correctValue": "js-logo"
         }
       ],
-      "correct": "Python",
+      "correct": "python-logo",
       "explanation": "The image with two snakes (blue & yellow) is Python's official logo."
-    }
+    }    
   ]
   

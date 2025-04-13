@@ -31,14 +31,16 @@
       "text": "Click the image that represents the official JavaScript logo.",
       "imageOptions": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+          "correctValue": "js-logo"
         },
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg"
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg",
+          "correctValue": "c-logo"
         }
       ],
-      "correct": "JavaScript",
+      "correct": "js-logo",
       "explanation": "The yellow square with JS is JavaScript's official logo."
-    }
+    }    
   ]
   
