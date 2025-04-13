@@ -104,18 +104,6 @@ function handleAnswer(answer, question) {
     showIncorrect(question.explanation);
   }
 }
-  
-  totalQuestions++;
-
-  if (
-    answer &&
-    answer.trim().toLowerCase() === String(question.correct).trim().toLowerCase()
-  ) {
-    score++;
-    showCorrect();
-  } else {
-    showIncorrect(question.explanation);
-  }
 
 
 
