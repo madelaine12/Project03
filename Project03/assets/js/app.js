@@ -42,10 +42,11 @@ async function loadNextQuestion() {
 
 function startTimer() {
   const timerEl = document.getElementById('timer');
+  if (!timerEl) return; 
   timerInterval = setInterval(() => {
     const now = new Date();
     const elapsed = Math.floor((now - startTime) / 1000);
-    if (timerEl) timerEl.textContent = `⏱️ Time: ${elapsed}s`;
+    timerEl.textContent = `Time: ${elapsed}s`; 
   }, 1000);
 }
 
@@ -61,16 +62,14 @@ function renderQuiz(question) {
         total: totalQuestions
       });
 
-      setTimeout(() => {
-        if (!timerInterval) startTimer();
-      }, 100); // Ensures DOM is loaded
-
+      startTimer(); 
       document.getElementById('submitAnswer').addEventListener('click', () => {
         const answer = document.querySelector('input[name="answer"]:checked')?.value || document.querySelector('#textAnswer')?.value;
         handleAnswer(answer, question);
       });
     });
 }
+
 
 
 function handleAnswer(answer, question) {
