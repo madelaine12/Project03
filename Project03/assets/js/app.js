@@ -107,6 +107,7 @@ function handleAnswer(answer, question) {
 
 
 
+
 function showCorrect() {
   fetch('/templates/correct.hbs')
     .then(res => res.text())
