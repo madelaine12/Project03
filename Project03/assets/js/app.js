@@ -33,7 +33,6 @@ async function startQuiz() {
   loadNextQuestion();
 }
 
-
 async function loadNextQuestion() {
   if (timerInterval) {
     clearInterval(timerInterval);
@@ -41,18 +40,16 @@ async function loadNextQuestion() {
 
   try {
     const question = await fetchQuestion(quizId, currentQuestionIndex);
-    renderQuiz(question); 
+    renderQuiz(question);  
 
     setTimeout(() => {
-      startTime = new Date();  
       startTimer();  
-    }, 500); 
+    }, 300); 
   } catch (err) {
     clearInterval(timerInterval); 
     showResult();
   }
 }
-
 
 
 function startTimer() {
@@ -67,10 +64,10 @@ function startTimer() {
     const now = new Date();
     const elapsed = Math.floor((now - startTime) / 1000); 
     console.log('Elapsed Time:', elapsed); 
-    
     timerEl.textContent = `Time: ${elapsed}s`; 
   }, 1000);
 }
+
 
 
 function renderQuiz(question) {
