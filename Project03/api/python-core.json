@@ -31,12 +31,10 @@
       "text": "Click the image that shows the Python logo.",
       "imageOptions": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
-          "alt": "Python"
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
         },
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-          "alt": "JavaScript"
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
         }
       ],
       "correct": "Python",
